@@ -29,8 +29,8 @@ namespace verziokovetes_Z135QR
         {
             var u = new User()
             {
-                LastName = txtLastName.Text,
-                FirstName = txtFirstName.Text
+                FullName = txtLastName.Text
+                
             };
             users.Add(u);
         }
