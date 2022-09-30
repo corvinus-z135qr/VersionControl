@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using verziokovetes_Z135QR.Entities;
 
 namespace verziokovetes_Z135QR
 {
@@ -19,5 +20,16 @@ namespace verziokovetes_Z135QR
             lblFirstName.Text = Resource1.FirstName; // label2
             btnAdd.Text = Resource1.Add; // button1
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            var u = new User()
+            {
+                LastName = txtLastName.Text,
+                FirstName = txtFirstName.Text
+            };
+            users.Add(u);
+        }
     }
+
 }
