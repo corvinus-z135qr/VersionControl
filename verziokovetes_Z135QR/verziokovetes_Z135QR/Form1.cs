@@ -34,6 +34,16 @@ namespace verziokovetes_Z135QR
             };
             users.Add(u);
         }
+
+        private void btn_torles_Click(object sender, EventArgs e)
+        {
+            var u = new User()
+            {
+                LastName = txtLastName.Text,
+                FirstName = txtFirstName.Text
+            };
+            users.Remove(u);
+        }
     }
 
 }
