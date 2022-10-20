@@ -118,6 +118,26 @@
     <None Include="Connected Services\MnbServiceReference\webszolgaltatas_05.MnbServiceReference.GetInfoResponseBody.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\Form1.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\webszolgaltatas_05.Entities.RateData.datasource" />
+    <None Include="Properties\DataSources\webszolgaltatas_05.MnbServiceReference.GetCurrenciesRequest.datasource" />
+    <None Include="Properties\DataSources\webszolgaltatas_05.MnbServiceReference.GetCurrenciesRequestBody.datasource" />
+    <None Include="Properties\DataSources\webszolgaltatas_05.MnbServiceReference.GetCurrencyUnitsRequest.datasource" />
+    <None Include="Properties\DataSources\webszolgaltatas_05.MnbServiceReference.GetCurrencyUnitsRequestBody.datasource" />
+    <None Include="Properties\DataSources\webszolgaltatas_05.MnbServiceReference.GetCurrentExchangeRatesRequest.datasource" />
+    <None Include="Properties\DataSources\webszolgaltatas_05.MnbServiceReference.GetCurrentExchangeRatesRequestBody.datasource" />
+    <None Include="Properties\DataSources\webszolgaltatas_05.MnbServiceReference.GetDateIntervalRequest.datasource" />
+    <None Include="Properties\DataSources\webszolgaltatas_05.MnbServiceReference.GetDateIntervalRequestBody.datasource" />
+    <None Include="Properties\DataSources\webszolgaltatas_05.MnbServiceReference.GetExchangeRatesRequest.datasource" />
+    <None Include="Properties\DataSources\webszolgaltatas_05.MnbServiceReference.GetExchangeRatesRequestBody.datasource" />
+    <None Include="Properties\DataSources\webszolgaltatas_05.MnbServiceReference.GetInfoRequest.datasource" />
+    <None Include="Properties\DataSources\webszolgaltatas_05.MnbServiceReference.GetInfoRequestBody.datasource" />
+    <None Include="Properties\DataSources\webszolgaltatas_05.MnbServiceReference.MNBArfolyamServiceSoap.datasource" />
+    <None Include="Properties\DataSources\webszolgaltatas_05.MnbServiceReference.MNBArfolyamServiceSoapChannel.datasource" />
+    <None Include="Properties\DataSources\webszolgaltatas_05.MnbServiceReference.MNBArfolyamServiceSoapClient.datasource" />
+    <None Include="Properties\DataSources\webszolgaltatas_05.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\webszolgaltatas_05.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
