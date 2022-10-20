@@ -25,6 +25,7 @@ namespace webszolgaltatas_05
                 startDate = "2020-01-01",
                 endDate = "2020-06-30"
             };
+            //ujra commitolom, hogy a 02/03 as lepes elkulonuljon
             var response = mnbService.GetExchangeRates(request);
 
             var result = response.GetExchangeRatesResult;
