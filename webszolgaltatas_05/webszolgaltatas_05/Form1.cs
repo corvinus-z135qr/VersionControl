@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using webszolgaltatas_05.Entities;
 using webszolgaltatas_05.MnbServiceReference;
 
 namespace webszolgaltatas_05
 {
     public partial class Form1 : Form
     {
-       
+        BindingList<RateData> Rates;
         public Form1()
         {
             InitializeComponent();

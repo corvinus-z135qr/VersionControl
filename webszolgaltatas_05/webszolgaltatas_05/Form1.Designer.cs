@@ -32,16 +32,25 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.getCurrentExchangeRatesResponseBodyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.getExchangeRatesResponseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rateDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.currencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getCurrentExchangeRatesResponseBodyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getExchangeRatesResponseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rateDataBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.getExchangeRatesResponseBindingSource;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dateDataGridViewTextBoxColumn,
+            this.currencyDataGridViewTextBoxColumn,
+            this.valueDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.rateDataBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(656, 426);
@@ -55,6 +64,28 @@
             // 
             this.getExchangeRatesResponseBindingSource.DataSource = typeof(webszolgaltatas_05.MnbServiceReference.GetExchangeRatesResponse);
             // 
+            // rateDataBindingSource
+            // 
+            this.rateDataBindingSource.DataSource = typeof(webszolgaltatas_05.Entities.RateData);
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            // 
+            // currencyDataGridViewTextBoxColumn
+            // 
+            this.currencyDataGridViewTextBoxColumn.DataPropertyName = "Currency";
+            this.currencyDataGridViewTextBoxColumn.HeaderText = "Currency";
+            this.currencyDataGridViewTextBoxColumn.Name = "currencyDataGridViewTextBoxColumn";
+            // 
+            // valueDataGridViewTextBoxColumn
+            // 
+            this.valueDataGridViewTextBoxColumn.DataPropertyName = "Value";
+            this.valueDataGridViewTextBoxColumn.HeaderText = "Value";
+            this.valueDataGridViewTextBoxColumn.Name = "valueDataGridViewTextBoxColumn";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -66,6 +97,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getCurrentExchangeRatesResponseBodyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getExchangeRatesResponseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rateDataBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -75,6 +107,10 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource getExchangeRatesResponseBindingSource;
         private System.Windows.Forms.BindingSource getCurrentExchangeRatesResponseBodyBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn currencyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valueDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource rateDataBindingSource;
     }
 }
 
