@@ -19,6 +19,7 @@ namespace webszolgaltatas_05
     public partial class Form1 : Form
     {
         BindingList<RateData> Rates;
+        BindingList<string> Currencies;
         public Form1()
         {
             InitializeComponent();
