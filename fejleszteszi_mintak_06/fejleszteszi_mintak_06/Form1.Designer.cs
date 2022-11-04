@@ -36,11 +36,13 @@ namespace fejleszteszi_mintak_06
             this.button_car = new System.Windows.Forms.Button();
             this.createTimer = new System.Windows.Forms.Timer(this.components);
             this.conveyorTimer = new System.Windows.Forms.Timer(this.components);
+            this.szinesgomb_1 = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
             // 
+            this.mainPanel.Controls.Add(this.szinesgomb_1);
             this.mainPanel.Controls.Add(this.label1);
             this.mainPanel.Controls.Add(this.button_ball);
             this.mainPanel.Controls.Add(this.button_car);
@@ -90,6 +92,16 @@ namespace fejleszteszi_mintak_06
             this.conveyorTimer.Interval = 10;
             this.conveyorTimer.Tick += new System.EventHandler(this.conveyorTimer_Tick);
             // 
+            // szinesgomb_1
+            // 
+            this.szinesgomb_1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.szinesgomb_1.Location = new System.Drawing.Point(112, 87);
+            this.szinesgomb_1.Name = "szinesgomb_1";
+            this.szinesgomb_1.Size = new System.Drawing.Size(75, 23);
+            this.szinesgomb_1.TabIndex = 3;
+            this.szinesgomb_1.UseVisualStyleBackColor = false;
+            this.szinesgomb_1.Click += new System.EventHandler(this.szinesgomb_1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,6 +124,7 @@ namespace fejleszteszi_mintak_06
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_ball;
         private System.Windows.Forms.Button button_car;
+        private System.Windows.Forms.Button szinesgomb_1;
     }
 }
 
