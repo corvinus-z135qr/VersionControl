@@ -31,4 +31,4 @@ namespace fejleszteszi_mintak_06.Abstractions
         }
     }
 }
-}
+
