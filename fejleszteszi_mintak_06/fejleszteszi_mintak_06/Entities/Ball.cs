@@ -13,15 +13,16 @@ namespace fejleszteszi_mintak_06.Entities
     {
         //kitorolnem az osztaly tartalmat, de ha csak a drawImage hagyom bent
         //szamomra ertelmezhetetlen hibauzenet jon 
+        public SolidBrush BallColor { get; private set; }
+        public Ball(Color color)
+        {
+            BallColor = new SolidBrush(color);
+        }
+
         public Ball()
         {
-            AutoSize = false;
-            Width = 50;
-            Height = Width;
-            Paint += Ball_Paint;
         }
-        
-        
+
         private void Ball_Paint(object sender, PaintEventArgs e)
         {
             DrawImage(e.Graphics);

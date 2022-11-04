@@ -77,7 +77,10 @@ namespace fejleszteszi_mintak_06
 
         private void button_ball_Click(object sender, EventArgs e)
         {
-            Factory = new BallFactory();
+            Factory = new BallFactory
+            {
+                BallColor = szinesgomb_1.BackColor
+            };
         }
 
         private void szinesgomb_1_Click(object sender, EventArgs e)
