@@ -48,7 +48,7 @@ namespace fejleszteszi_mintak_06
         private void createTimer_Tick(object sender, EventArgs e)
         {
             var ball = Factory.CreateNew();
-            _balls.Add(ball);
+            _balls.Add((Ball)ball);
             ball.Left = -ball.Width;
             mainPanel.Controls.Add(ball);
         }
