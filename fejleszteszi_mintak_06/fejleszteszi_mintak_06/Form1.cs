@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using fejleszteszi_mintak_06.Entities;
 
 namespace fejleszteszi_mintak_06
 {
