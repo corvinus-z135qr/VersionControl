@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace fejleszteszi_mintak_06.Entities
 {
-    public class BallFactory
+    
+    class BallFactory
     {
         public Ball CreateNew()
         {
