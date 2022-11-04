@@ -79,7 +79,7 @@ namespace fejleszteszi_mintak_06
         {
             Factory = new BallFactory
             {
-                BallColor = szinesgomb_1.BackColor
+                BallColor = button_ball.BackColor
             };
         }
 

@@ -37,11 +37,17 @@ namespace fejleszteszi_mintak_06
             this.createTimer = new System.Windows.Forms.Timer(this.components);
             this.conveyorTimer = new System.Windows.Forms.Timer(this.components);
             this.szinesgomb_1 = new System.Windows.Forms.Button();
+            this.button_present = new System.Windows.Forms.Button();
+            this.szinesgomb_2 = new System.Windows.Forms.Button();
+            this.szinesgomb_3 = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
             // 
+            this.mainPanel.Controls.Add(this.szinesgomb_3);
+            this.mainPanel.Controls.Add(this.szinesgomb_2);
+            this.mainPanel.Controls.Add(this.button_present);
             this.mainPanel.Controls.Add(this.szinesgomb_1);
             this.mainPanel.Controls.Add(this.label1);
             this.mainPanel.Controls.Add(this.button_ball);
@@ -102,6 +108,33 @@ namespace fejleszteszi_mintak_06
             this.szinesgomb_1.UseVisualStyleBackColor = false;
             this.szinesgomb_1.Click += new System.EventHandler(this.szinesgomb_1_Click);
             // 
+            // button_present
+            // 
+            this.button_present.Location = new System.Drawing.Point(206, 57);
+            this.button_present.Name = "button_present";
+            this.button_present.Size = new System.Drawing.Size(75, 23);
+            this.button_present.TabIndex = 4;
+            this.button_present.Text = "Present";
+            this.button_present.UseVisualStyleBackColor = true;
+            // 
+            // szinesgomb_2
+            // 
+            this.szinesgomb_2.BackColor = System.Drawing.Color.Red;
+            this.szinesgomb_2.Location = new System.Drawing.Point(206, 86);
+            this.szinesgomb_2.Name = "szinesgomb_2";
+            this.szinesgomb_2.Size = new System.Drawing.Size(75, 23);
+            this.szinesgomb_2.TabIndex = 5;
+            this.szinesgomb_2.UseVisualStyleBackColor = false;
+            // 
+            // szinesgomb_3
+            // 
+            this.szinesgomb_3.BackColor = System.Drawing.Color.Yellow;
+            this.szinesgomb_3.Location = new System.Drawing.Point(206, 116);
+            this.szinesgomb_3.Name = "szinesgomb_3";
+            this.szinesgomb_3.Size = new System.Drawing.Size(75, 23);
+            this.szinesgomb_3.TabIndex = 6;
+            this.szinesgomb_3.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -125,6 +158,9 @@ namespace fejleszteszi_mintak_06
         private System.Windows.Forms.Button button_ball;
         private System.Windows.Forms.Button button_car;
         private System.Windows.Forms.Button szinesgomb_1;
+        private System.Windows.Forms.Button szinesgomb_3;
+        private System.Windows.Forms.Button szinesgomb_2;
+        private System.Windows.Forms.Button button_present;
     }
 }
 
