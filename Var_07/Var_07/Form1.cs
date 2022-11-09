@@ -22,6 +22,7 @@ namespace Var_07
             Ticks = context.Tick.ToList();
             dataGridView1.DataSource = Ticks;
             CreatePortfolio();
+            //6-os pont megertve, majd torolve
         }
 
         private void CreatePortfolio()
