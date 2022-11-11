@@ -24,6 +24,7 @@ namespace Var_07
         Excel.Application xlApp;
         Excel.Workbook xlWB;
         Excel.Worksheet xlSheet;
+        
         public Form1()
         {
             InitializeComponent();
@@ -78,7 +79,9 @@ namespace Var_07
             }
             return value;
         }
-        public void CreateExcel()
+       
+
+        private void button1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -102,18 +105,13 @@ namespace Var_07
                 xlApp = null;
             }
         }
+
         public void CreateTable()
         {
-            string[] headers = new string[]
-            {
-                "Időszak",
-                "Nyereség",
-            };
-            for (int i = 0; i < headers.Length; i++)
-            {
-                xlSheet.Cells[1, 1] = headers[0]; 
-            }
+            //xlSheet.Cells[1, 1] = "Időszak";
+           // xlSheet.Cells[1, 2] = "Nyereség";
         }
+
     }
 }
 
