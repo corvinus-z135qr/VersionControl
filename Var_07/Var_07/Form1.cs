@@ -10,8 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Var_07.Entities;
 using System.Reflection;
-using Excel = Microsoft.Office.Interop.Excel;
-using System.Reflection;
+
 
 
 namespace Var_07
@@ -21,9 +20,7 @@ namespace Var_07
         PortfolioEntities context = new PortfolioEntities();
         List<Tick> Ticks;
         List<PortfolioItem> Portfolio = new List<PortfolioItem>();
-        Excel.Application xlApp;
-        Excel.Workbook xlWB;
-        Excel.Worksheet xlSheet;
+        List<decimal> Nyereségek = new List<decimal>();
         
         public Form1()
         {
@@ -31,11 +28,10 @@ namespace Var_07
             Ticks = context.Tick.ToList();
             dataGridView1.DataSource = Ticks;
             CreatePortfolio();
-            CreateTable();
             //6-os pont megertve, majd torolve
 
 
-            List<decimal> Nyereségek = new List<decimal>();
+            
             int intervalum = 30;
             DateTime kezdőDátum = (from x in Ticks select x.TradingDay).Min();
             DateTime záróDátum = new DateTime(2016, 12, 30);
@@ -79,37 +75,29 @@ namespace Var_07
             }
             return value;
         }
-       
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            SaveFileDialog sfd = new SaveFileDialog();
+            if (sfd.ShowDialog() != DialogResult.OK) return;
+            using (StreamWriter sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8))
             {
-
-                xlApp = new Excel.Application();
-                xlWB = xlApp.Workbooks.Add(Missing.Value);
-                xlSheet = xlWB.ActiveSheet;
-                CreateTable();
-
-                xlApp.Visible = true;
-                xlApp.UserControl = true;
+                var Rendezes = (from x in Nyereségek
+                                          orderby x ascending
+                                          select x)
+                                        .ToList();
+                int id = 0;
+                sw.Write("Időszak;" + "Nyereség\n");
+                foreach (var item in Rendezes)
+                {
+                    sw.Write(id.ToString() + ";");
+                    sw.Write(item);
+                    sw.WriteLine();
+                    id++;
+                }
             }
-            catch (Exception ex)
-            {
-                string errMsg = string.Format("Error: {0}\nLine: {1}", ex.Message, ex.Source);
-                MessageBox.Show(errMsg, "Error");
 
-                xlWB.Close(false, Type.Missing, Type.Missing);
-                xlApp.Quit();
-                xlWB = null;
-                xlApp = null;
-            }
-        }
-
-        public void CreateTable()
-        {
-            //xlSheet.Cells[1, 1] = "Időszak";
-           // xlSheet.Cells[1, 2] = "Nyereség";
         }
 
     }
