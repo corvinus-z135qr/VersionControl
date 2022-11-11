@@ -23,7 +23,6 @@ namespace Var_07
             dataGridView1.DataSource = Ticks;
             CreatePortfolio();
             //6-os pont megertve, majd torolve
-            GetPortfolioValue(DateTime date);
 
 
             List<decimal> Nyereségek = new List<decimal>();
