@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Var_07.Entities;
+using System.Reflection;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.Reflection;
+
 
 namespace Var_07
 {
@@ -16,12 +21,16 @@ namespace Var_07
         PortfolioEntities context = new PortfolioEntities();
         List<Tick> Ticks;
         List<PortfolioItem> Portfolio = new List<PortfolioItem>();
+        Excel.Application xlApp;
+        Excel.Workbook xlWB;
+        Excel.Worksheet xlSheet;
         public Form1()
         {
             InitializeComponent();
             Ticks = context.Tick.ToList();
             dataGridView1.DataSource = Ticks;
             CreatePortfolio();
+            CreateTable();
             //6-os pont megertve, majd torolve
 
 
@@ -69,5 +78,42 @@ namespace Var_07
             }
             return value;
         }
+        public void CreateExcel()
+        {
+            try
+            {
+
+                xlApp = new Excel.Application();
+                xlWB = xlApp.Workbooks.Add(Missing.Value);
+                xlSheet = xlWB.ActiveSheet;
+                CreateTable();
+
+                xlApp.Visible = true;
+                xlApp.UserControl = true;
+            }
+            catch (Exception ex)
+            {
+                string errMsg = string.Format("Error: {0}\nLine: {1}", ex.Message, ex.Source);
+                MessageBox.Show(errMsg, "Error");
+
+                xlWB.Close(false, Type.Missing, Type.Missing);
+                xlApp.Quit();
+                xlWB = null;
+                xlApp = null;
+            }
+        }
+        public void CreateTable()
+        {
+            string[] headers = new string[]
+            {
+                "Időszak",
+                "Nyereség",
+            };
+            for (int i = 0; i < headers.Length; i++)
+            {
+                xlSheet.Cells[1, 1] = headers[0]; 
+            }
+        }
     }
 }
+
