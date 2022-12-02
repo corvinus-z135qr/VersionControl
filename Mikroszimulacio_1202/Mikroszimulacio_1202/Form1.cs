@@ -26,6 +26,11 @@ namespace Mikroszimulacio_1202
             DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
             dataGridView1.DataSource = Population;
 
+          
+        }
+
+        private void Simulation()
+        {
             for (int year = 2005; year <= 2024; year++)
             {
                 for (int i = 0; i < Population.Count; i++)
@@ -141,6 +146,16 @@ namespace Mikroszimulacio_1202
                     }
                 }
             }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Simulation();
         }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
     }
 
