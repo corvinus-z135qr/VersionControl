@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mikroszimulacio_1202.Entitites
 {
-    class Person
+    public class Person
     {
         public int BirthYear { get; set; }
         public Gender Gender { get; set; }
