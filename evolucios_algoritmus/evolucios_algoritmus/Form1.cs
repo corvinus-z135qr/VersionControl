@@ -16,15 +16,25 @@ namespace evolucios_algoritmus
   
             GameController gc = new GameController();
             GameArea ga;
+            int populationSize = 250;
+            int nbrOfSteps = 10;
+            int nbrOfStepsIncrement = 10;
+            int generation = 1;
 
-            public Form1()
+        public Form1()
             {
                 InitializeComponent();
 
                 ga = gc.ActivateDisplay();
-                this.Controls.Add(ga);
+                
 
-
+            for (int i = 0; i < populationSize; i++)
+            {
+                gc.AddPlayer(nbrOfSteps);
+            }
+            this.Controls.Add(ga);
+            gc.Start();
+            
             //gc.AddPlayer();
             //gc.Start(true);
         }
