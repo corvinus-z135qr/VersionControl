@@ -29,20 +29,33 @@ namespace evolucios_algoritmus
         /// </summary>
         private void InitializeComponent()
         {
+            this.generationLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // generationLabel
+            // 
+            this.generationLabel.AutoSize = true;
+            this.generationLabel.Location = new System.Drawing.Point(12, 381);
+            this.generationLabel.Name = "generationLabel";
+            this.generationLabel.Size = new System.Drawing.Size(0, 13);
+            this.generationLabel.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 537);
+            this.Controls.Add(this.generationLabel);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label generationLabel;
     }
 }
 

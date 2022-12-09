@@ -15,25 +15,28 @@ namespace evolucios_algoritmus
     {
   
             GameController gc = new GameController();
-            GameArea ga;
-            int populationSize = 250;
+            GameArea gamingArea;
+            int populationSize = 100;
             int nbrOfSteps = 10;
             int nbrOfStepsIncrement = 10;
             int generation = 1;
+
+
             Brain winnerBrain = null;
 
         public Form1()
             {
                 InitializeComponent();
 
-                ga = gc.ActivateDisplay();
+                gamingArea = gc.ActivateDisplay();
+            this.Controls.Add(gamingArea);
 
             gc.GameOver += Gc_GameOver;
             for (int i = 0; i < populationSize; i++)
             {
                 gc.AddPlayer(nbrOfSteps);
             }
-            this.Controls.Add(ga);
+            
             gc.Start();
             
             //gc.AddPlayer();
@@ -47,9 +50,18 @@ namespace evolucios_algoritmus
             var topPerformers = playerList.Take(populationSize / 2).ToList();
             generation++;
 
-            this.Text = string.Format(
-                "{0}. generáció",
-                generation);
+            var winners = from p in topPerformers
+                          where p.IsWinner
+                          select p;
+
+            if (winners.Count() > 0)
+            {
+                winnerBrain = winners.FirstOrDefault().Brain.Clone();
+                gc.GameOver -= Gc_GameOver;
+                return;
+            }
+
+            generationLabel.Text = string.Format("{0}. generáció",generation);
             gc.ResetCurrentLevel();
             foreach (var p in topPerformers)
             {
@@ -65,16 +77,6 @@ namespace evolucios_algoritmus
                 else
                     gc.AddPlayer(b.Mutate());
 
-               /* var winners = from p in topPerformers
-                              where p.IsWinner
-                              select p;
-                if (winners.Count() > 0)
-                {
-                    winnerBrain = winners.FirstOrDefault().Brain.Clone();
-                    gc.GameOver -= Gc_GameOver;
-                    return;
-                }
-               */
             }
             gc.Start();
         }
